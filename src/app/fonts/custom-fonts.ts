@@ -2,7 +2,7 @@
 import localFont from "next/font/local";
 
 export const CustomFonts = localFont({
-  src: "./GothamBlack.otf",
-  variable: "--font-gotham",
+  src: "./Helvetica.ttf",
+  variable: "--font-helvetica",
   display: "swap", // optional, for font loading strategy
 });

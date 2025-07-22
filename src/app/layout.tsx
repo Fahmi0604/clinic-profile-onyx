@@ -1,6 +1,6 @@
 // 'use client'
 
-import { Outfit } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,8 +9,8 @@ import { getSettings } from "@/lib/api";
 import Script from "next/script";
 // import { PageWrapper } from "@/components";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ['latin'],
 });
 
@@ -50,7 +50,7 @@ export default async function RootLayout({
         </Script>
       </head>
       <body
-        className={`${outfit.variable} ${CustomFonts.variable} antialiased bg-white font-outfit`}
+        className={`${ebGaramond.variable} ${CustomFonts.variable} antialiased bg-white font-helvetica`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>

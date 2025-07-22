@@ -1,3 +1,4 @@
+import React from "react"
 
 function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
@@ -112,8 +113,144 @@ function ArrowBackIcon(props: React.SVGProps<SVGSVGElement>) {
     )
 }
 
+function VerifiedIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M23 12L20.56 9.21L20.9 5.52L17.29 4.7L15.4 1.5L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5L3.44 9.2L1 12L3.44 14.79L3.1 18.49L6.71 19.31L8.6 22.5L12 21.03L15.4 22.49L17.29 19.3L20.9 18.48L20.56 14.79L23 12ZM10.09 16.72L6.29 12.91L7.77 11.43L10.09 13.76L15.94 7.89L17.42 9.37L10.09 16.72Z" fill="currentColor" />
+        </svg>
+
+    )
+}
+
+function PlayIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M6.92773 7.32172V17.6817C6.92773 18.4717 7.79773 18.9517 8.46773 18.5217L16.6077 13.3417C17.2277 12.9517 17.2277 12.0517 16.6077 11.6517L8.46773 6.48172C7.79773 6.05172 6.92773 6.53172 6.92773 7.32172Z" fill="currentColor" />
+        </svg>
+    )
+}
+
+const ArrowLongRightIcon = (props: React.SVGProps<SVGSVGElement>) => {
+    return (
+        <svg
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M15.5 5L14.09 6.41L18.67 11H2.5V13H18.67L14.08 17.59L15.5 19L22.5 12L15.5 5Z" fill="currentColor" />
+        </svg>
+    )
+}
+
+function ArrowCircleLeftIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <g filter="url(#filter0_dd_486_1092)">
+                <path d="M8.33398 23.0026C8.33398 32.2026 15.8007 39.6693 25.0007 39.6693C34.2007 39.6693 41.6673 32.2026 41.6673 23.0026C41.6673 13.8026 34.2007 6.33594 25.0007 6.33594C15.8007 6.33594 8.33398 13.8026 8.33398 23.0026ZM25.0007 18.3526V21.3359H30.0007C30.9173 21.3359 31.6673 22.0859 31.6673 23.0026C31.6673 23.9193 30.9173 24.6693 30.0007 24.6693H25.0007V27.6526C25.0007 28.4026 24.1007 28.7693 23.584 28.2359L18.934 23.5859C18.6007 23.2526 18.6007 22.7359 18.934 22.4026L23.584 17.7526C24.1007 17.2359 25.0007 17.6026 25.0007 18.3526Z" fill="currentColor" />
+            </g>
+            <defs>
+                <filter id="filter0_dd_486_1092" x="-3" y="-3" width="56" height="56" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_486_1092" />
+                    <feOffset dy="2" />
+                    <feGaussianBlur stdDeviation="3" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_486_1092" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feOffset dy="1" />
+                    <feGaussianBlur stdDeviation="1" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                    <feBlend mode="normal" in2="effect1_dropShadow_486_1092" result="effect2_dropShadow_486_1092" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_486_1092" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+    )
+}
+
+function ArrowCircleRightIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <g filter="url(#filter0_dd_486_1093)">
+                <path d="M41.6673 23.0026C41.6673 13.8026 34.2007 6.33594 25.0007 6.33594C15.8007 6.33594 8.33398 13.8026 8.33398 23.0026C8.33398 32.2026 15.8007 39.6693 25.0007 39.6693C34.2007 39.6693 41.6673 32.2026 41.6673 23.0026ZM25.0007 27.6526V24.6693H20.0007C19.084 24.6693 18.334 23.9193 18.334 23.0026C18.334 22.0859 19.084 21.3359 20.0007 21.3359H25.0007V18.3526C25.0007 17.6026 25.9007 17.2359 26.4173 17.7693L31.0673 22.4193C31.4007 22.7526 31.4007 23.2693 31.0673 23.6026L26.4173 28.2526C25.9007 28.7693 25.0007 28.4026 25.0007 27.6526Z" fill="currentColor" />
+            </g>
+            <defs>
+                <filter id="filter0_dd_486_1093" x="-3" y="-3" width="56" height="56" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_486_1093" />
+                    <feOffset dy="2" />
+                    <feGaussianBlur stdDeviation="3" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_486_1093" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                    <feOffset dy="1" />
+                    <feGaussianBlur stdDeviation="1" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                    <feBlend mode="normal" in2="effect1_dropShadow_486_1093" result="effect2_dropShadow_486_1093" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_486_1093" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+
+    )
+}
+
+function PlaceIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M12 2.16406C7.8 2.16406 4 5.38406 4 10.3641C4 13.5441 6.45 17.2841 11.34 21.5941C11.72 21.9241 12.29 21.9241 12.67 21.5941C17.55 17.2841 20 13.5441 20 10.3641C20 5.38406 16.2 2.16406 12 2.16406ZM12 12.1641C10.9 12.1641 10 11.2641 10 10.1641C10 9.06406 10.9 8.16406 12 8.16406C13.1 8.16406 14 9.06406 14 10.1641C14 11.2641 13.1 12.1641 12 12.1641Z" fill="currentColor" />
+        </svg>
+    )
+}
+
 type IconProps = {
-    name: 'whatsapp' | 'phone' | 'instagram' | 'chevron' | 'star' | 'arrow-forward' | 'arrow-back'
+    name: 'whatsapp' | 'phone' | 'instagram' | 'chevron' | 'star' | 'arrow-forward' | 'arrow-back' | 'verified' | 'play' | 'arrow-long-right' | 'arrow-circle-left' | 'arrow-circle-right' | 'place'
     size?: number
     className?: string
 }
@@ -126,7 +263,14 @@ export const Icons = ({ name, size = 24, className }: IconProps) => {
     if (name === 'star') return <StarIcon width={size} height={size} className={className} />
     if (name === 'arrow-forward') return <ArrowForwardIcon width={size} height={size} className={className} />
     if (name === 'arrow-back') return <ArrowBackIcon width={size} height={size} className={className} />
-    return;
+    if (name === 'verified') return <VerifiedIcon width={size} height={size} className={className} />
+    if (name === 'play') return <PlayIcon width={size} height={size} className={className} />
+    if (name === 'arrow-long-right') return <ArrowLongRightIcon width={size} height={size} className={className} />
+    if (name === 'arrow-circle-left') return <ArrowCircleLeftIcon width={size} height={size} className={className} />
+    if (name === 'arrow-circle-right') return <ArrowCircleRightIcon width={size} height={size} className={className} />
+    if (name === 'place') return <PlaceIcon width={size} height={size} className={className} />
+
+    return null;
 }
 
 export default Icons

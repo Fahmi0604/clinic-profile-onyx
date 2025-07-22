@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 type CtaProps = {
     title: string | React.ReactNode
-    description: string;
+    description: string | React.ReactNode;
     image: string;
     classNameImage?: string;
     buttonLabel?: string;
@@ -16,36 +16,39 @@ type CtaProps = {
 }
 
 async function Cta(props: CtaProps) {
-    const { title, description, image, classNameImage, buttonLabel, url } = props;
+    const { title = '', description = '', image, classNameImage, buttonLabel, url } = props;
 
     const settings = await getSettings()
 
     return (
-        <section className="md:h-[400px] flex flex-col md:flex-row-reverse">
-            <div className="relative">
-                <Image
-                    src={image}
-                    alt="cta"
-                    width={100}
-                    height={100}
-                    className={cn("w-full h-[400px] md:h-full object-cover md:w-[60vw] z-0 block", classNameImage)}
-                />
-                <div className="z-20 bottom-0 md:right-0 absolute w-full -mb-1 md:mb-0 md:-ml-1 h-[50%] md:h-full bg-gradient-to-t md:bg-gradient-to-r from-gold-primary via-gold-primary/70 md:via-gold-primary/30 to-transparent" />
-            </div>
-            <div className="w-full md:w-[65vw] px-4 md:px-0 flex justify-end items-center bg-gold-primary text-heading-1">
-                {/* gotham */}
-                <div className="md:w-fit md:min-w-xl">
-                    {/* <h1 className="hidden md:block text-5xl font-bold font-gotham mb-4">Healing to Your Tooth Pain, <br /> Perfecting Your Smile </h1> */}
-                    <h2 className="text-xl text-[28px] md:text-3xl md:text-[31px] xl:text-4xl xl:text-[35px] md:max-w-lg xl:max-w-xl font-medium font-gotham mb-2 md:mb-4">{title}</h2>
-                    <p className="leading-7 mb-6 md:mb-12 md:text-lg md:max-w-md">{description}</p>
-
-                    <div className="flex flex-col md:flex-row gap-4 mb-4">
-                        <Link href={url || whatsappLink(settings.data.socials?.whatsapp ?? '')}>
-                            <Button className="w-full md:w-fit font-outfit font-medium rounded-full bg-white text-heading-2 cursor-pointer py-6 md:py-4 px-3 mb-4 hover:bg-gray-400">
-                                <Icons name="whatsapp" className="w-6 h-6" /> {buttonLabel || "Reservasi Via WhatsApp"}
-                            </Button>
-                        </Link>
-                    </div>
+        <section className="w-full bg-custom-brown flex justify-center">
+            <div className="w-full flex flex-col md:flex-row md:max-w-5xl xl:max-w-6xl pt-7 px-7 md:p-0">
+                <div className='md:w-1/2 flex flex-col justify-center gap-6 text-custom-text-color mb-6 md:mb-0'>
+                    <h2 className='leading-[130%] font-eb-garamond font-semibold text-3xl text-[32px] md:text-4xl'>{title}</h2>
+                    <p className='leading-[150%] mb-2'>{description}</p>
+                    <Link className='w-full md:w-fit' href={url || whatsappLink(settings.data.socials?.whatsapp ?? '')}>
+                        <Button className="w-full flex text-black font-helvetica font-semibold cursor-pointer bg-white rounded-none !py-6 !px-10 hover:bg-white/70">
+                            <Icons name="whatsapp" className="md:hidden h-10 w-10" />
+                            {buttonLabel ?? "Book Your Session Now"}
+                            <Icons name="whatsapp" className="hidden md:block h-10 w-10" />
+                        </Button>
+                    </Link>
+                </div>
+                <div className='md:w-1/2'>
+                    <Image
+                        src={`/assets/images/${image}-desktop.webp`}
+                        alt={'cta'}
+                        width={1280}
+                        height={720}
+                        className={cn('w-full hidden md:block', classNameImage)}
+                    />
+                    <Image
+                        src={`/assets/images/${image}-mobile.webp`}
+                        alt={'cta'}
+                        width={1280}
+                        height={720}
+                        className={cn('w-full md:hidden', classNameImage)}
+                    />
                 </div>
             </div>
         </section>
