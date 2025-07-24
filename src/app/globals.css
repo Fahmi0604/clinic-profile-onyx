@@ -58,9 +58,12 @@
   --color-custom-primary: var(--custom-primary);
   --color-custom-text-color: var(--custom-text-color);
   --color-custom-text-color-2: var(--custom-text-color-2);
+  --color-custom-text-color-3: var(--custom-text-color-3);
   --color-custom-brown: var(--custom-brown);
   --color-custom-overlay: var(--custom-overlay);
   --color-custom-black: var(--custom-black);
+  --color-custom-white-accent: var(--custom-white-accent);
+  --color-custom-green-accent: var(--custom-green-accent);
   --color-custom-cream: var(--custom-cream);
 }
 
@@ -146,10 +149,13 @@ body {
   --custom-primary: #faf7f0;
   --custom-text-color: #3e3939;
   --custom-text-color-2: #6a6666;
+  --custom-text-color-3: #9f9b9b;
   --custom-brown: #dcae5b;
   --custom-overlay: #2d2d2c;
   --custom-black: #2c2c2c;
   --custom-cream: #f7ebd8;
+  --custom-white-accent: #efeee3;
+  --custom-green-accent: #565030;
   --footer: #2c2b2b;
 }
 

@@ -30,9 +30,11 @@ function AccordionTrigger({
   className,
   children,
   icon = "plus",
+  iconClassName,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
   icon?: "chevron" | "plus"
+  iconClassName?: string
 }) {
   return (
     <AccordionPrimitive.Header className="flex">
@@ -47,11 +49,11 @@ function AccordionTrigger({
       >
         {children}
         {icon === "chevron" && (
-          <ChevronDownIcon className="text-black pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+          <ChevronDownIcon className={cn("text-black pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200", iconClassName)} />
         )}
 
         {icon === "plus" && (
-          <PlusIcon className="text-black pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+          <PlusIcon className={cn("text-black pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200", iconClassName)} />
         )}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

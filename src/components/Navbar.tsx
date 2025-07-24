@@ -12,7 +12,7 @@ export default function Navbar({ settings }: { settings: Setting }) {
     const menuItems = [
         {
             label: "Our team",
-            href: "/dokter",
+            href: "/ourteam",
         },
         {
             label: "What we do",

@@ -28,9 +28,9 @@ async function Cta(props: CtaProps) {
                     <p className='leading-[150%] mb-2'>{description}</p>
                     <Link className='w-full md:w-fit' href={url || whatsappLink(settings.data.socials?.whatsapp ?? '')}>
                         <Button className="w-full flex text-black font-helvetica font-semibold cursor-pointer bg-white rounded-none !py-6 !px-10 hover:bg-white/70">
-                            <Icons name="whatsapp" className="md:hidden h-10 w-10" />
+                            {/* <Icons name="whatsapp" className="md:hidden h-10 w-10" /> */}
                             {buttonLabel ?? "Book Your Session Now"}
-                            <Icons name="whatsapp" className="hidden md:block h-10 w-10" />
+                            <Icons name="whatsapp" className=" h-10 w-10" />
                         </Button>
                     </Link>
                 </div>
