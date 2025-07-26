@@ -1,13 +1,9 @@
-import { Banner, PageWrapper } from "@/components";
+import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { metaData } from "@/lib/utils/metadata";
-import { doctors } from "@/lib/data/doctor";
-import Link from "next/link";
-import Icons from "@/components/Icon";
-import HeroPhilosophy from "@/sections/philosophi/hero";
 import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -189,74 +185,6 @@ export default async function Doctor() {
           </div>
         </div>
       </section>
-
-
-      {/* <section className="md:px-7 pt-7 md:py-20 space-y-12 md:space-y-24">
-        <div className="w-full flex flex-col gap-y-4 md:gap-y-0 md:flex-row justify-between text-custom-text-color">
-          <div className="px-7 md:px-0 md:w-[22%] xl:w-[24%]">
-            <h2 className="leading-[130%] text-2xl md:leading-[47px] md:text-4xl font-eb-garamond font-semibold mb-4">Modern and Comfortable Clinic</h2>
-
-            <p className="leading-[150%] md:leading-[130%]">An elegant space where comfort meets design, curated for your comfort and aesthetic pleasure, making every visit feel exceptional</p>
-            <ul className="list-disc pl-5">
-              <li>Reception atelier</li>
-              <li>Refreshments bar</li>
-              <li>Aesthetic lounge</li>
-              <li>Powder room</li>
-            </ul>
-          </div>
-          <div className={cn("", index % 2 === 0 ? "md:w-[50%] xl:w-[48%]" : "md:w-[25%] xl:w-[24%]")}>
-            <Image
-              src={`/assets/images/philosophy/philosophi-image-${index * 2 + 1}.webp`}
-              alt={item.title}
-              width={500}
-              height={500}
-              className="w-full md:h-[454px]"
-            />
-          </div>
-          <div className={cn("", index % 2 === 0 ? "md:w-[25%] xl:w-[24%]" : "md:w-[50%] xl:w-[48%]")}>
-            <Image
-              src={`/assets/images/philosophy/philosophi-image-${index * 2 + 2}.webp`}
-              alt={item.title}
-              width={500}
-              height={500}
-              className="w-full md:h-[454px]"
-            />
-          </div>
-        </div>
-      </section>
-      <section className="md:px-7 pt-7 md:py-20 space-y-12 md:space-y-24">
-        <div className="w-full flex flex-col gap-y-4 md:gap-y-0 md:flex-row justify-between text-custom-text-color">
-          <div className="px-7 md:px-0 md:w-[22%] xl:w-[24%]">
-            <h2 className="leading-[130%] text-2xl md:leading-[47px] md:text-4xl font-eb-garamond font-semibold mb-4">Modern and Comfortable Clinic</h2>
-
-            <p className="leading-[150%] md:leading-[130%]">An elegant space where comfort meets design, curated for your comfort and aesthetic pleasure, making every visit feel exceptional</p>
-            <ul className="list-disc pl-5">
-              <li>Reception atelier</li>
-              <li>Refreshments bar</li>
-              <li>Aesthetic lounge</li>
-              <li>Powder room</li>
-            </ul>
-          </div>
-          <div className={cn("", index % 2 === 0 ? "md:w-[50%] xl:w-[48%]" : "md:w-[25%] xl:w-[24%]")}>
-            <Image
-              src={`/assets/images/philosophy/philosophi-image-${index * 2 + 1}.webp`}
-              alt={item.title}
-              width={500}
-              height={500}
-              className="w-full md:h-[454px]"
-            />
-          </div>
-          <div className={cn("", index % 2 === 0 ? "md:w-[25%] xl:w-[24%]" : "md:w-[50%] xl:w-[48%]")}>
-            <Image
-              src={`/assets/images/philosophy/philosophi-image-${index * 2 + 2}.webp`}
-              alt={item.title}
-              width={500}
-              height={500}
-              className="w-full md:h-[454px]"
-            />
-          </div>
-        </div>
-      </section> */}
 
       <Cta
         title="Designed to make you feel at ease"

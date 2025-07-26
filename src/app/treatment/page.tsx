@@ -1,4 +1,4 @@
-import { Banner, PageWrapper } from "@/components";
+import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
 import { Metadata } from "next";
 import Image from "next/image";

@@ -1,7 +1,5 @@
 import { PageWrapper } from "@/components";
 import Icons from "@/components/Icon";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { treatments } from "@/lib/data/treatment";
 import Image from "next/image";
 
@@ -9,7 +7,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
     const { slug } = await params;
 
     const treatment = treatments.find((d) => d.slug === slug);
-    const index = treatments.findIndex((d) => d.slug === slug);
+    // const index = treatments.findIndex((d) => d.slug === slug);
     return (<PageWrapper className="min-h-screen bg-custom-primary">
         <section className="relative w-full overflow-hidden flex flex-col-reverse md:flex-row mb-10 md:mb-20">
             <div className='bg-custom-white-accent md:absolute z-10 left-0 w-full h-full flex justify-center items-center'>
@@ -19,22 +17,31 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                         <p className="leading-[150%] md:leading-[24px] mb-10">{treatment?.subheading}</p>
 
                         <div className="flex flex-col gap-2">
-                            {treatment?.description?.map((e, i) => {
-
-                                let icon = '';
-                                if (i === 0) icon = 'verified'
-                                if (i === 1) icon = 'star-badge'
-                                if (i === 2) icon = 'clock4'
-
-                                return (<div key={i} className="flex gap-2 text-custom-text-color">
-                                    <Icons name={icon as any} />
-                                    <div className="flex flex-col">
-                                        <h5 className="font-bold">{e.heading}</h5>
-                                        <p>{e.list}</p>
+                            {treatment?.description && (
+                                <>
+                                    <div className="flex gap-2 text-custom-text-color">
+                                        <Icons name={'verified'} />
+                                        <div className="flex flex-col">
+                                            <h5 className="font-bold">{treatment?.description[0].heading}</h5>
+                                            <p>{treatment?.description[0].list}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                )
-                            })}
+                                    <div className="flex gap-2 text-custom-text-color">
+                                        <Icons name={'star-badge'} />
+                                        <div className="flex flex-col">
+                                            <h5 className="font-bold">{treatment?.description[1].heading}</h5>
+                                            <p>{treatment?.description[1].list}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2 text-custom-text-color">
+                                        <Icons name={'clock4'} />
+                                        <div className="flex flex-col">
+                                            <h5 className="font-bold">{treatment?.description[2].heading}</h5>
+                                            <p>{treatment?.description[2].list}</p>
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

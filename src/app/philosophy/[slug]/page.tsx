@@ -14,7 +14,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
         <section className="w-full p-7 md:px-0 md:py-20 md:max-w-5xl xl:max-w-6xl text-custom-text-color">
             <h1 className="text-5xl font-eb-garamond font-semibold leading-[150%] mb-4">{doctor?.name}</h1>
             <div className='flex gap-7 mb-14'>
-                {doctor?.statistic.map((s) => (
+                {doctor?.statistic && doctor?.statistic.map((s) => (
                     <div key={s.title} className='flex items-center gap-2'>
                         <Icons name='verified' className='w-6 h-6 ' />
                         <p className='font-bold'>{s.value}</p>

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://bmwdentalclinic.com
+Host: https://onyxdentalcenter.id
 
 # Sitemaps
-Sitemap: https://bmwdentalclinic.com/api/sitemap
+Sitemap: https://onyxdentalcenter.id/api/sitemap

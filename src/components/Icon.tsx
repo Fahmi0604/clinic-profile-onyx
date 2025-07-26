@@ -283,7 +283,7 @@ function Clock4Icon(props: React.SVGProps<SVGSVGElement>) {
 
 
 
-type IconProps = {
+export type IconProps = {
     name: 'whatsapp' | 'phone' | 'instagram' | 'chevron' | 'star' | 'arrow-forward' | 'arrow-back' | 'verified' | 'play' | 'arrow-long-right' | 'arrow-circle-left' | 'arrow-circle-right' | 'place' | 'star-badge' | 'clock4'
     size?: number
     className?: string

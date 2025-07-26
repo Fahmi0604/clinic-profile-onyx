@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { getBlogsForSitemap, getServices } from "@/lib/api";
+import { getBlogsForSitemap } from "@/lib/api";
 import { NextResponse } from "next/server";
 
 let cachedSitemap: string | null = null;
@@ -16,31 +16,39 @@ export async function GET() {
       const responseBlog = await getBlogsForSitemap();
       const blogs = responseBlog.data;
 
-      const responseService = await getServices();
-      const services = responseService.data;
-      console.log(services);
-
       const staticUrls = [
         {
-          loc: "https://bmwdentalclinic.com",
+          loc: "https://onyxdentalcenter.id",
           changefreq: "daily",
           priority: 0.7,
           lastmod: lastMod,
         },
         {
-          loc: "https://bmwdentalclinic.com/dokter",
+          loc: "https://onyxdentalcenter.id/ourteam",
           changefreq: "daily",
           priority: 0.7,
           lastmod: lastMod,
         },
         {
-          loc: "https://bmwdentalclinic.com/layanan",
+          loc: "https://onyxdentalcenter.id/treatment",
           changefreq: "daily",
           priority: 0.7,
           lastmod: lastMod,
         },
         {
-          loc: "https://bmwdentalclinic.com/fasilitas",
+          loc: "https://onyxdentalcenter.id/experience",
+          changefreq: "daily",
+          priority: 0.7,
+          lastmod: lastMod,
+        },
+        {
+          loc: "https://onyxdentalcenter.id/philosophy",
+          changefreq: "daily",
+          priority: 0.7,
+          lastmod: lastMod,
+        },
+        {
+          loc: "https://onyxdentalcenter.id/proven-result",
           changefreq: "daily",
           priority: 0.7,
           lastmod: lastMod,
@@ -50,23 +58,14 @@ export async function GET() {
 
       const blogUrls =
         blogs?.map((blog: Post) => ({
-          loc: `https://bmwdentalclinic.com/blogs/${blog.slug}`,
+          loc: `https://onyxdentalcenter.id/blogs/${blog.slug}`,
           lastmod: lastMod,
-          changefreq: "weekly",
-          priority: 0.8,
-        })) || [];
-
-      const serviceUrls =
-        services?.map((service: Service) => ({
-          loc: `https://bmwdentalclinic.com/layanan/${service.slug}`,
-          lastmod: service.updated_at ?? lastMod,
           changefreq: "weekly",
           priority: 0.8,
         })) || [];
 
       const urls: Record<string, string | number>[] = [
         ...staticUrls,
-        ...serviceUrls,
         ...blogUrls,
       ];
 

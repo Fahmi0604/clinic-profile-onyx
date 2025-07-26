@@ -34,6 +34,11 @@ export const treatments = [
         description: "A Comprehensive Smile Makeover after braces and veneers",
       },
     ],
+    cta: {
+      title: "",
+      subheading: "",
+      buttonLabel: "",
+    },
   },
   {
     title: "Veneers",

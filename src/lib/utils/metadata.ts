@@ -12,7 +12,7 @@ export function metaData({
   images = [],
   path = "",
 }: GenerateMetadataParams): Metadata {
-  const baseUrl = "https://bmwdentalclinic.com";
+  const baseUrl = "https://onyxdentalcenter.id";
   const url = path ? `${baseUrl}${path}` : baseUrl;
 
   return {

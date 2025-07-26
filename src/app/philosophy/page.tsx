@@ -1,12 +1,9 @@
-import { Banner, PageWrapper } from "@/components";
+import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { metaData } from "@/lib/utils/metadata";
-import { doctors } from "@/lib/data/doctor";
-import Link from "next/link";
-import Icons from "@/components/Icon";
 import HeroPhilosophy from "@/sections/philosophi/hero";
 import { cn } from "@/lib/utils";
 
