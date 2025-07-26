@@ -249,8 +249,42 @@ function PlaceIcon(props: React.SVGProps<SVGSVGElement>) {
     )
 }
 
+function StarBadgeIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM15.22 17.39L12 15.45L8.78 17.39C8.4 17.62 7.93 17.28 8.03 16.85L8.88 13.19L6.05 10.74C5.72 10.45 5.9 9.9 6.34 9.86L10.08 9.54L11.54 6.09C11.71 5.68 12.29 5.68 12.46 6.09L13.92 9.53L17.66 9.85C18.1 9.89 18.28 10.44 17.94 10.73L15.11 13.18L15.96 16.85C16.06 17.28 15.6 17.62 15.22 17.39Z" fill="currentColor" />
+        </svg>
+    )
+}
+
+function Clock4Icon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={props.className}
+            {...props}
+        >
+            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM15.55 15.8L11.47 13.29C11.17 13.11 10.99 12.79 10.99 12.44V7.75C11 7.34 11.34 7 11.75 7C12.16 7 12.5 7.34 12.5 7.75V12.2L16.34 14.51C16.7 14.73 16.82 15.2 16.6 15.56C16.38 15.91 15.91 16.02 15.55 15.8Z" fill="currentColor" />
+        </svg>
+    )
+}
+
+
+
 type IconProps = {
-    name: 'whatsapp' | 'phone' | 'instagram' | 'chevron' | 'star' | 'arrow-forward' | 'arrow-back' | 'verified' | 'play' | 'arrow-long-right' | 'arrow-circle-left' | 'arrow-circle-right' | 'place'
+    name: 'whatsapp' | 'phone' | 'instagram' | 'chevron' | 'star' | 'arrow-forward' | 'arrow-back' | 'verified' | 'play' | 'arrow-long-right' | 'arrow-circle-left' | 'arrow-circle-right' | 'place' | 'star-badge' | 'clock4'
     size?: number
     className?: string
 }
@@ -269,6 +303,8 @@ export const Icons = ({ name, size = 24, className }: IconProps) => {
     if (name === 'arrow-circle-left') return <ArrowCircleLeftIcon width={size} height={size} className={className} />
     if (name === 'arrow-circle-right') return <ArrowCircleRightIcon width={size} height={size} className={className} />
     if (name === 'place') return <PlaceIcon width={size} height={size} className={className} />
+    if (name === 'star-badge') return <StarBadgeIcon width={size} height={size} className={className} />
+    if (name === 'clock4') return <Clock4Icon width={size} height={size} className={className} />
 
     return null;
 }

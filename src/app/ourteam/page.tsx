@@ -33,7 +33,7 @@ export default async function Doctor() {
         <div className='bg-custom-black md:bg-transparent md:absolute bottom-0 w-full h-full flex justify-center items-end'>
           <div className="w-full md:max-w-5xl xl:max-w-6xl z-20 md:mb-[12vh]">
             <div className="p-7 md:p-0 md:max-w-[55%] flex flex-col h-full text-white">
-              <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-bold">Our Team</h1>
+              <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-eb-garamond font-bold">Our Team</h1>
               <p>A smile is more than aesthetics. It’s emotion, identity, and it’s our passion to design it.</p>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default async function Doctor() {
       </section>
 
       <section className="w-full flex justify-center">
-        <div className="w-full md:max-w-5xl xl:max-w-6xl p-7 md:px-0 md:py-20 ">
+        <div className="w-full md:max-w-5xl xl:max-w-6xl p-7 md:px-0 md:pt-20 ">
           <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
             {doctors.map((item, index) => (
               (index <= 2) && <div className="bg-white md:w-[31%] drop-shadow-md" key={index}>

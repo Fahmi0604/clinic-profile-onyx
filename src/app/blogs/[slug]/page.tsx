@@ -54,15 +54,15 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     return (
         <>
             <JsonLd schemaType='BlogPosting' data={blog.data} />
-            <PageWrapper>
+            <PageWrapper className='bg-custom-primary'>
                 <section className="w-full flex justify-center px-4 py-8 md:py-20">
                     <div className='w-full md:max-w-3xl xl:max-w-4xl'>
-                        <div className='flex justify-between items-center mb-10'>
+                        {/* <div className='flex justify-between items-center mb-10'>
                             <Link href={`/blogs`} className='text-body-2 flex items-center gap-2 underline'> <Icons name='arrow-back' className='w-6 h-6 text-black' /> Kembali ke Blog</Link>
-                        </div>
+                        </div> */}
 
-                        <h1 className='mb-1 text-3xl text-heading-1 font-semibold'>{blog.data.title}</h1>
-                        <span className='text-caption-2'>{format(blog.data.published_at ?? '', 'dd MMMM yyyy', { locale: id })}</span>
+                        <h1 className='mb-1 leading-[150%] text-5xl font-eb-garamond text-custom-text-color font-semibold'>{blog.data.title}</h1>
+                        <span className='text-custom-text-color'>{format(blog.data.published_at ?? '', 'dd MMMM yyyy', { locale: id })}</span>
 
                         <Image
                             src={blog.data.thumbnailUrl ?? ''}
@@ -72,7 +72,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                             className='mt-8 rounded-lg w-full md:h-[70vh] object-cover'
                         />
                         {/* <p className='text-stone-400'>by {blog.author.name}</p> */}
-                        <article className='mt-6 prose lg:prose-lg' dangerouslySetInnerHTML={{ __html: blog.data.content }} />
+                        <article className='mt-6 font-helvetica! md:max-w-3xl! xl:max-w-4xl! text-custom-text-color! prose lg:prose-lg' dangerouslySetInnerHTML={{ __html: blog.data.content }} />
                     </div>
                 </section>
                 {Boolean(blog.data?.cta) && <Cta
@@ -81,6 +81,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                     image={blog.data.cta.imgBanner ?? ''}
                     buttonLabel={blog.data.cta.textButton ?? ''}
                     url={blog.data.cta.url ?? ''}
+                    isDynamic={true}
                 // classNameImage="object-[50%_80%] md:object-[50%_40%]"
                 />}
             </PageWrapper>

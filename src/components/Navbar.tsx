@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -6,9 +8,11 @@ import NavbarSheet from "./NavbarSheet"
 // import PromoBar from "./PromoBar"
 import { whatsappLink } from "@/lib/utils"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
+import { useBoolean } from "@/hooks"
 
 export default function Navbar({ settings }: { settings: Setting }) {
 
+    const { value, setValue } = useBoolean()
     const menuItems = [
         {
             label: "Our team",
@@ -19,21 +23,21 @@ export default function Navbar({ settings }: { settings: Setting }) {
             href: [
                 {
                     label: "360 Smile Philosophy Session",
-                    href: "/360smile",
+                    href: "/philosophy",
                 },
                 {
                     label: "Treatments",
-                    href: "/layanan",
+                    href: "/treatment",
                 },
             ],
         },
         {
             label: "The Onyx Experience",
-            href: "/fasilitas",
+            href: "/experience",
         },
         {
             label: "Proven Result",
-            href: "/fasilitas",
+            href: "/proven-result",
         },
         {
             label: "Blog",
@@ -63,13 +67,14 @@ export default function Navbar({ settings }: { settings: Setting }) {
                                     {e.label}
                                 </Link>
                             ) : (
-                                <Popover key={e.label}>
+                                <Popover open={value} onOpenChange={setValue} key={e.label}>
                                     <PopoverTrigger className="text-custom-text-color hover:text-gray-400">{e.label}</PopoverTrigger>
                                     <PopoverContent className="p-4 flex flex-col gap-3 ml-[35%] z-[110] bg-black border-none text-white font-medium mt-2">
                                         {e.href.map((item) => (
                                             <Link
                                                 key={item.label}
                                                 href={item.href}
+                                                onClick={() => setValue(false)}
                                             >
                                                 {item.label}
                                             </Link>

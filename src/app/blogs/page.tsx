@@ -10,6 +10,7 @@ import { Metadata } from 'next';
 import { getBlogs } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import { metaData } from '@/lib/utils/metadata';
+import Cta from '@/components/Cta';
 
 export const revalidate = 60; // ISR: update list every 60s
 
@@ -36,97 +37,55 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function BlogListPage() {
     const _blogs = await getBlogs()
-    // const blogs = [
-    //     {
-    //         id: 1,
-    //         title: 'Tips Menjaga Kesehatan Gigi Anak Sejak Dini',
-    //         slug: 'blog-1',
-    //         excerpt: 'Menjaga kesehatan gigi anak sejak dini sangat penting untuk perkembangan gigi permanen yang sehat',
-    //         featuredImage: '/assets/images/banner-dokter.webp',
-    //         publishedDate: new Date(),
-    //     },
-    //     {
-    //         id: 2,
-    //         title: 'Blog 2',
-    //         slug: 'blog-2',
-    //         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    //         featuredImage: '/assets/images/banner-service.webp',
-    //         publishedDate: new Date(),
-    //     },
-    //     {
-    //         id: 3,
-    //         title: 'Blog 3',
-    //         slug: 'blog-3',
-    //         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    //         featuredImage: '/assets/images/banner-facilities.webp',
-    //         publishedDate: new Date(),
-    //     },
-    //     {
-    //         id: 4,
-    //         title: 'Blog 4',
-    //         slug: 'blog-4',
-    //         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    //         featuredImage: '/assets/images/banner.webp',
-    //         publishedDate: new Date(),
-    //     },
-    // ]
 
     if (!_blogs) return notFound();
 
     const blogs = _blogs.data;
 
     return (
-        // <main className='p-4'>
-        //     <h1 className='text-stone-600 text-2xl font-semibold mb-6'>Blog Articles</h1>
-        //     <div className='w-full flex gap-4 flex-col lg:flex-row lg:flex-wrap'>
-        //         {blogs.map((blog) => (
-        //             <div key={blog.slug} className='w-full lg:w-[20%] bg-stone-200 border-2 border-stone-500 p-2 rounded-lg shadow shadow-stone-500'>
-        //                 <Link href={`/blogs/${blog.slug}`}>
-        //                     <Image
-        //                         src={blog.featuredImage ?? ''}
-        //                         alt={blog.title ?? ''}
-        //                         width={100}
-        //                         height={100}
-        //                         className='object-cover w-full h-40'
-        //                     />
-        //                     <h2 className='text-stone-500 text-xl font-medium'>{blog.title}</h2>
-        //                     <p className='text-stone-400 text-sm'>{blog.excerpt}</p>
-        //                 </Link>
-        //             </div>
-        //         ))}
-        //     </div>
-        // </main>
+        <PageWrapper className="min-h-screen bg-custom-primary">
+            <section className='flex justify-center px-4 py-8 md:py-20'>
+                <div className='w-full md:max-w-5xl xl:max-w-6xl'>
+                    <div className='mb-24'>
+                        <h3 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1 mb-6 md:mb-10">Dental Article</h3>
+                        <div className='w-full flex flex-col md:flex-row flex-wrap items-stretch gap-5 md:gap-7 xl:gap-10'>
+                            {blogs.map((e) => (
+                                <Link key={e.id} href={`/blogs/${e.slug}`} className='w-full md:w-[31%] flex flex-col gap-4 bg-white drop-shadow-md'>
+                                    <Image
+                                        src={e.thumbnailUrl}
+                                        alt={e.title}
+                                        width={200}
+                                        height={200}
+                                        className='w-full h-[250px] object-cover'
+                                    />
+                                    <div className='w-full h-full flex flex-col justify-between p-4'>
+                                        <div>
+                                            <h4 className='leading-[130%] text-2xl font-semibold text-custom-text-color mb-2'>{e.title}</h4>
+                                            <p className='leading-[150%] text-[#7C7C7C]'>{e.excerpt}</p>
+                                        </div>
 
-        <PageWrapper className="flex justify-center px-4 py-8 md:py-20">
-            <div className='w-full md:max-w-5xl xl:max-w-6xl'>
-                <div className='mb-24'>
-                    <h3 className="text-3xl font-gotham font-bold text-heading-1 mb-6 md:mb-10">Dental Article</h3>
-                    <div className='w-full flex flex-col md:flex-row flex-wrap items-stretch gap-5 md:gap-7 xl:gap-10'>
-                        {blogs.map((e) => (
-                            <Link key={e.id} href={`/blogs/${e.slug}`} className='w-full md:w-[31%] flex flex-col gap-4 border border-line-color rounded-xl'>
-                                <Image
-                                    src={e.thumbnailUrl}
-                                    alt={e.title}
-                                    width={200}
-                                    height={200}
-                                    className='w-full h-[250px] object-cover rounded-t-xl'
-                                />
-                                <div className='w-full h-full flex flex-col justify-between p-4'>
-                                    <div>
-                                        <h4 className='text-[22px] font-semibold font-gotham text-heading-1 mb-2'>{e.title}</h4>
-                                        <p className='text-body-2'>{e.excerpt}</p>
+                                        <div className='flex justify-between items-center mt-8'>
+                                            <span className='leading-[150%] text-[#7C7C7C]'>{format(e.published_at ?? '', 'dd MMMM yyyy', { locale: id })}</span>
+                                            <p className='leading-[150%] text-custom-text-color font-semibold flex items-center gap-2'>Read More <Icons name='arrow-forward' className='w-6 h-6 text-black'></Icons></p>
+                                        </div>
                                     </div>
-
-                                    <div className='flex justify-between items-center mt-4'>
-                                        <span className='text-caption-2'>{format(e.published_at ?? '', 'dd MMMM yyyy', { locale: id })}</span>
-                                        <p className='text-body-2 flex items-center gap-2 underline'>Baca Selengkapnya <Icons name='arrow-forward' className='w-6 h-6 text-black'></Icons></p>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <Cta
+                title="Begin your smile transformation"
+                description={<>
+                    Your smile is your signature. Let us refine it with care, precision, and an eye <br className='hidden md:block' />
+                    for elegance.
+                </>}
+                image="proven-result/proven-result-cta"
+                classNameTitle="text-2xl"
+                buttonLabel="Book Your Session Now"
+            />
         </PageWrapper>
     );
 }

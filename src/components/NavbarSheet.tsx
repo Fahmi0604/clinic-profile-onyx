@@ -70,6 +70,7 @@ export default function NavbarSheet({ menuItems = [] }: NavbarSheetProps) {
                                             key={item.label}
                                             href={item.href}
                                             className="hover:text-gray-400"
+                                            onClick={() => setValue(false)}
                                         >
                                             {item.label}
                                         </Link>
