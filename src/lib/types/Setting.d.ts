@@ -17,6 +17,9 @@ declare type Setting = {
   socials: {
     whatsapp: string;
     instagram: string;
+    tiktok: string;
+    youtube: string;
+    facebook: string;
   };
   contactInfo: {
     phone: string;
@@ -25,4 +28,5 @@ declare type Setting = {
   openHours: string;
   created_at: string;
   updated_at: string;
+  link_whatsapp?: string;
 };

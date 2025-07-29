@@ -29,8 +29,8 @@ export const revalidate = 60; // ISR: update list every 60s
 export async function generateMetadata(): Promise<Metadata> {
     return metaData({
         title: 'Blogs',
-        description: 'BMW Dental Clinic menyediakan artikel kesehatan gigi dan mulut yang bermanfaat untuk keluarga Anda.',
-        images: [{ url: '/assets/images/banner.webp' }],
+        description: "Jakarta's premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.",
+        images: [{ url: '' }],
         path: '/blogs',
     });
 };

@@ -7,10 +7,10 @@ import { metaData } from "@/lib/utils/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Dokter',
-    description: 'Dokter Gigi Terdekat di Medan, hubungi kami untuk konsultasi dengan dokter gigi profesional',
-    images: [{ url: '/assets/images/banner-dokter.webp' }],
-    path: '/dokter',
+    title: 'Proven Result',
+    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    images: [{ url: '/assets/images/proven-result/proven-result-banner.webp' }],
+    path: '/proven-result',
   });
 }
 

@@ -24,8 +24,8 @@ import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
     title: 'Home',
-    description: 'BMW Dental Clinic adalah klinik gigi terpercaya, terjangkau dan modern di Medan dengan dokter gigi terbaik',
-    images: [{ url: '/assets/images/banner.webp' }],
+    description: "Jakarta's premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.",
+    images: [{ url: '' }],
     path: '/',
   });
 }

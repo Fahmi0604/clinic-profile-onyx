@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Dokter',
-    description: 'Dokter Gigi Terdekat di Medan, hubungi kami untuk konsultasi dengan dokter gigi profesional',
-    images: [{ url: '/assets/images/banner-dokter.webp' }],
-    path: '/dokter',
+    title: '360 Smile Philosophy',
+    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    images: [{ url: '' }],
+    path: '/philosophy',
   });
 }
 
@@ -93,7 +93,7 @@ export default async function Philosophy() {
                 alt={item.title}
                 width={500}
                 height={500}
-                className="w-full md:h-[454px]"
+                className="w-full md:h-[454px] object-cover"
               />
             </div>
             <div className={cn("", index % 2 === 0 ? "md:w-[25%] xl:w-[24%]" : "md:w-[50%] xl:w-[48%]")}>
@@ -102,7 +102,7 @@ export default async function Philosophy() {
                 alt={item.title}
                 width={500}
                 height={500}
-                className="w-full md:h-[454px]"
+                className="w-full md:h-[454px] object-cover"
               />
             </div>
           </div>

@@ -46,7 +46,7 @@ export default function HeroVideoResponsive() {
                 <div className='w-full h-full flex justify-center items-end'>
                     <div className="w-full md:max-w-5xl xl:max-w-6xl relative z-10 mb-[20vh]">
                         <div className="px-7 md:px-0 md:max-w-[55%] flex flex-col items-center justify-center h-full text-white">
-                            <h1 className="text-4xl text-[40px] mb-8 md:text-6xl font-bold">Crafting The <br className='md:hidden' /> Best Version of <span className=' font-eb-garamond italic font-light'>Your Smile</span></h1>
+                            <h1 className="text-4xl text-[40px] mb-8 md:text-6xl font-eb-garamond font-bold">Crafting The <br className='md:hidden' /> Best Version of <span className=' font-eb-garamond italic font-light'>Your Smile</span></h1>
 
                             <div className='hidden md:grid w-full grid-cols-3 justify-between mb-10'>
                                 <div>
@@ -115,7 +115,7 @@ export default function HeroVideoResponsive() {
                     <iframe
                         width="100%"
                         height="100%"
-                        src="https://www.youtube.com/embed/7U20i3bMX10?si=oAPgHH-jZFamDfPV"
+                        src="https://www.youtube.com/embed/TLiCGoVLnD0?si=zNE53jVLDeeizrIi&autoplay=1"
                         title="YouTube video player"
                         // frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

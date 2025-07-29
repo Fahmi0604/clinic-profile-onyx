@@ -26,7 +26,8 @@ export default function NavbarSheet({ menuItems = [] }: NavbarSheetProps) {
         <Sheet open={value} onOpenChange={setValue}>
             <div className="grid md:hidden grid-cols-[auto_1fr_auto] items-center w-full gap-x-2 px-0 py-2">
                 <Link href="/" className="flex">
-                    <Image width={24} height={24} src="/logo.svg" alt="logo" className="text-white w-24" />
+                    {/* <Image width={24} height={24} src="/logo.svg" alt="logo" className="text-white w-24" /> */}
+                    <Image src="/logo.svg" alt="logo" className="w-28" width={24} height={24} priority />
                     <span className="sr-only">logo</span>
                 </Link>
 

@@ -10,14 +10,14 @@ import Icons from "@/components/Icon";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Dokter',
-    description: 'Dokter Gigi Terdekat di Medan, hubungi kami untuk konsultasi dengan dokter gigi profesional',
-    images: [{ url: '/assets/images/banner-dokter.webp' }],
-    path: '/dokter',
+    title: 'Our Team',
+    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
+    path: '/ourteam',
   });
 }
 
-export default async function Doctor() {
+export default async function OurTeam() {
 
   return (
     <PageWrapper className="min-h-screen">

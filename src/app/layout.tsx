@@ -27,7 +27,7 @@ export default async function RootLayout({
       <head>
         {/* Google Analytics Script */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z67MFBT9H0"
+          src="https://www.googletagmanager.com/gtag/js?id=G-5P470BH13Q"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -35,7 +35,7 @@ export default async function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-Z67MFBT9H0');
+            gtag('config', 'G-5P470BH13Q');
           `}
         </Script>
         {/* Google Tag Manager */}
@@ -45,7 +45,7 @@ export default async function RootLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PBXFJRV5');
+            })(window,document,'script','dataLayer','GTM-M685TJBG');
           `}
         </Script>
       </head>
@@ -55,7 +55,7 @@ export default async function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PBXFJRV5"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M685TJBG"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}

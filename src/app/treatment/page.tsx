@@ -10,10 +10,10 @@ import { treatments } from "@/lib/data/treatment";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Dokter',
-    description: 'Dokter Gigi Terdekat di Medan, hubungi kami untuk konsultasi dengan dokter gigi profesional',
-    images: [{ url: '/assets/images/banner-dokter.webp' }],
-    path: '/dokter',
+    title: 'Treatment',
+    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    images: [{ url: '/assets/images/treatment/treatment-banner.webp' }],
+    path: '/treatment',
   });
 }
 

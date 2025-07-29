@@ -59,7 +59,26 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
         // },
       }
     );
-    return res;
+
+    console.log("CEK: ", {
+      ...res,
+      data: {
+        ...res.data,
+        link_whatsapp: `https://wa.me/${
+          res.data?.socials?.whatsapp || ""
+        }?text=Hi%20ONYX%2C%20saya%20ingin%20konsultasi%20untuk%20perawatan%20gigi%20saya%20ya`,
+      },
+    });
+
+    return {
+      ...res,
+      data: {
+        ...res.data,
+        link_whatsapp: `https://wa.me/${
+          res.data?.socials?.whatsapp || ""
+        }?text=Hi%20ONYX%2C%20saya%20ingin%20konsultasi%20untuk%20perawatan%20gigi%20saya%20ya`,
+      },
+    };
   } catch (error) {
     console.error("Failed to fetch settings:", error);
     // Return fallback data during build failures

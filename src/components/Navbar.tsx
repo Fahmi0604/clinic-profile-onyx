@@ -67,9 +67,22 @@ export default function Navbar({ settings }: { settings: Setting }) {
                                     {e.label}
                                 </Link>
                             ) : (
-                                <Popover open={value} onOpenChange={setValue} key={e.label}>
-                                    <PopoverTrigger className="text-custom-text-color hover:text-gray-400">{e.label}</PopoverTrigger>
-                                    <PopoverContent className="p-4 flex flex-col gap-3 ml-[35%] z-[110] bg-black border-none text-white font-medium mt-2">
+                                <Popover
+                                    open={value}
+                                    // onOpenChange={setValue} 
+                                    key={e.label}
+                                >
+                                    <PopoverTrigger
+                                        onMouseEnter={() => setValue(true)}
+                                        onMouseLeave={() => setValue(false)}
+                                        className="text-custom-text-color hover:text-gray-400 py-3 border-none ring-0">
+                                        {e.label}
+                                    </PopoverTrigger>
+                                    <PopoverContent
+                                        onMouseEnter={() => setValue(true)}
+                                        onMouseLeave={() => setValue(false)}
+                                        className="p-4 flex flex-col gap-3 ml-[35%] z-[110] bg-black border-none text-white font-medium -mt-2"
+                                    >
                                         {e.href.map((item) => (
                                             <Link
                                                 key={item.label}

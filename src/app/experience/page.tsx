@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Dokter',
-    description: 'Dokter Gigi Terdekat di Medan, hubungi kami untuk konsultasi dengan dokter gigi profesional',
-    images: [{ url: '/assets/images/banner-dokter.webp' }],
-    path: '/dokter',
+    title: 'Experience',
+    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    images: [{ url: '/assets/images/experience/experience-banner.webp' }],
+    path: '/experience',
   });
 }
 
-export default async function Doctor() {
+export default async function Experience() {
 
 
   return (
@@ -59,7 +59,7 @@ export default async function Doctor() {
               alt="experience-image-1"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
           <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col justify-between")}>
@@ -68,14 +68,14 @@ export default async function Doctor() {
               alt="experience-image-2"
               width={500}
               height={500}
-              className="w-full md:h-[215px]"
+              className="w-full md:h-[215px] object-cover"
             />
             <Image
               src={`/assets/images/experience/experience-image-3.webp`}
               alt="experience-image-3"
               width={500}
               height={500}
-              className="w-full md:h-[215px]"
+              className="w-full md:h-[215px] object-cover"
             />
           </div>
         </div>
@@ -98,7 +98,7 @@ export default async function Doctor() {
               alt="experience-image-4"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
@@ -107,7 +107,7 @@ export default async function Doctor() {
               alt="experience-image-5"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
@@ -116,7 +116,7 @@ export default async function Doctor() {
               alt="experience-image-6"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
         </div>
@@ -133,7 +133,7 @@ export default async function Doctor() {
               alt="experience-image-7"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
           <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col justify-between")}>
@@ -142,14 +142,14 @@ export default async function Doctor() {
               alt="experience-image-8"
               width={500}
               height={500}
-              className="w-full md:h-[215px]"
+              className="w-full md:h-[215px] object-cover"
             />
             <Image
               src={`/assets/images/experience/experience-image-9.webp`}
               alt="experience-image-9"
               width={500}
               height={500}
-              className="w-full md:h-[215px]"
+              className="w-full md:h-[215px] object-cover"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ export default async function Doctor() {
               alt="experience-image-10"
               width={500}
               height={500}
-              className="w-full md:h-[455px]"
+              className="w-full md:h-[455px] object-cover"
             />
           </div>
           <div className={cn("md:w-[50%] xl:w-[48%]")}>
@@ -180,7 +180,7 @@ export default async function Doctor() {
               alt="experience-image-11"
               width={500}
               height={500}
-              className="w-full md:h-[454px]"
+              className="w-full md:h-[454px] object-cover"
             />
           </div>
         </div>
