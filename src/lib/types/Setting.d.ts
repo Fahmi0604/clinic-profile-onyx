@@ -16,6 +16,7 @@ declare type Setting = {
   cta: string;
   socials: {
     whatsapp: string;
+    whatsappMessage: string;
     instagram: string;
     tiktok: string;
     youtube: string;

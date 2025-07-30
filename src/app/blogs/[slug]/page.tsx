@@ -13,6 +13,7 @@ import { id } from 'date-fns/locale';
 import { PageWrapper } from '@/components';
 import { getBlogsBySlug } from '@/lib/api';
 import Cta from '@/components/Cta';
+import Head from 'next/head';
 
 export const revalidate = 60; // ISR regeneration time (60 seconds)
 export const dynamicParams = true; // Allow dynamic params
@@ -53,6 +54,9 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
 
     return (
         <>
+            <Head>
+                <link rel="alternate" hrefLang="en" href={`https://onyxdentalcenter.id/blogs/${slug}`} />
+            </Head>
             <JsonLd schemaType='BlogPosting' data={blog.data} />
             <PageWrapper className='bg-custom-primary'>
                 <section className="w-full flex justify-center px-4 py-8 md:py-20">

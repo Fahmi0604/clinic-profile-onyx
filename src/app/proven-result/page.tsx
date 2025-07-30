@@ -101,7 +101,7 @@ export default async function ProvenResult() {
       <div className="w-full flex justify-center p-7">
         <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
           {list.map((item, itemIndex) => (
-            <div key={itemIndex}>
+            <div key={itemIndex} className="mb-8 md:mb-0">
               <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6">
                 {item.title}
               </h1>
@@ -132,11 +132,10 @@ export default async function ProvenResult() {
 
       <Cta
         title="Let’s design a smile you’ll love"
-        description={<>
-          Every confident smile you see here began with a single step. Make yours <br className="hidden md:block" /> today with ONYX.
-        </>}
+        description={`Every confident smile you see here began with a single step. Make yours today with ONYX.`}
         image="proven-result/proven-result-cta"
         classNameTitle="text-2xl"
+        classNameDescription="xl:max-w-[90%]"
         buttonLabel="Book Your Session Now"
       />
     </PageWrapper>

@@ -20,7 +20,7 @@ export default async function Section2() {
                     </h3>
                     <p className="mb-6 md:mb-12" >Every smile has a story. Begin your personalized smile journey, guided exclusively by our three founders.</p>
                     <Link href="/philosophy">
-                        <Button className="md:w-fit flex gap-2 !px-12 py-6 cursor-pointer bg-white rounded-none border border-black items-center justify-center hover:bg-white">
+                        <Button className="w-full md:w-fit flex gap-2 !px-12 py-6 cursor-pointer bg-white rounded-none border border-black items-center justify-center hover:bg-white">
                             <span className="text-black font-semibold">Learn More</span>
                             <Icons name="arrow-long-right" className="w-6 h-6 text-black" />
                         </Button>

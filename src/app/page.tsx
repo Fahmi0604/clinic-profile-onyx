@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
+import { getSettings } from "@/lib/api";
 // import Icons from "@/components/Icon";
 // import { Button } from "@/components/ui/button";
 // import { getSettings } from "@/lib/api";
@@ -31,11 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  // const settings = await getSettings()
+  const settings = await getSettings()
 
   return (
     <PageWrapper className="min-h-screen bg-custom-primary">
-      <HeroVideoResponsive />
+      <HeroVideoResponsive settings={settings.data} />
       <Section1 />
       <Section2 />
       <Section3 />
@@ -44,8 +45,9 @@ export default async function Home() {
       <Section6 />
       <Cta
         title="Begin your smile transformation"
-        description={<>Your smile is your signature. Start the <br className="hidden md:block" /> journey to be the best version of yourself.</>}
+        description={"Your smile is your signature. Start the journey to be the best version of yourself."}
         image="home-cta"
+        classNameDescription="md:max-w-[60%] xl:max-w-[55%]"
         // classNameImage=""
         buttonLabel="Book Your Session Now"
       />

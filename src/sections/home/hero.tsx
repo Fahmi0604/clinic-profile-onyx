@@ -5,9 +5,10 @@ import Icons from '@/components/Icon';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { useBoolean } from '@/hooks';
+import Link from 'next/link';
 import React from 'react';
 
-export default function HeroVideoResponsive() {
+export default function HeroVideoResponsive({ settings }: { settings: Setting }) {
 
     const { value, setValue, setTrue } = useBoolean()
 
@@ -74,8 +75,10 @@ export default function HeroVideoResponsive() {
 
                             <div className='w-full flex flex-col md:flex-row'>
                                 <Button className="flex text-black font-helvetica font-semibold cursor-pointer bg-custom-brown rounded-none py-5 mb-4 md:mb-0 md:mr-4 hover:bg-custom-brown/70">
-                                    {/* <Icons name="whatsapp" className="h-6 w-6 text-heading-2" /> */}
-                                    Book Your Session Now
+                                    <Link href={settings?.link_whatsapp || ''} target="_blank">
+                                        {/* <Icons name="whatsapp" className="h-6 w-6 text-heading-2" /> */}
+                                        Book Your Session Now
+                                    </Link>
                                 </Button>
                                 <Button onClick={setTrue} className="flex text-black font-helvetica font-semibold cursor-pointer bg-white rounded-none py-5 hover:bg-white/70">
                                     <Icons name="play" className="h-8 w-8" />
@@ -115,7 +118,7 @@ export default function HeroVideoResponsive() {
                     <iframe
                         width="100%"
                         height="100%"
-                        src="https://www.youtube.com/embed/TLiCGoVLnD0?si=zNE53jVLDeeizrIi&autoplay=1"
+                        src="https://www.youtube.com/embed/FIRlKny3n2M?si=MpuWkjigNZxSJOPC&autoplay=1"
                         title="YouTube video player"
                         // frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

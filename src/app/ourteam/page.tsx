@@ -86,12 +86,13 @@ export default async function OurTeam() {
       </section>
       <Cta
         title="Personalized Care by Trusted Hands"
-        description={<>
-          Each ONYX dentist brings years of skill, <br className="md:hidden" /> passion, and precision to your smile. <br />
-          Choose your expert and take the first <br className="md:hidden" /> step today.
-        </>}
+        description={`
+          Each ONYX dentist brings years of skill, passion, and precision to your smile.
+          Choose your expert and take the first step today.
+        `}
         image="doctor/doctor-cta"
         classNameImage="mt-6"
+        classNameDescription="pr-[10%] md:pr-0"
         buttonLabel="Book Your Session Now"
       />
     </PageWrapper>

@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 // import Icons from './Icon';
 import Image from "next/image";
-// import { whatsappLink } from "@/lib/utils";
 
 type NavbarSheetProps = {
     menuItems: {
@@ -17,9 +16,10 @@ type NavbarSheetProps = {
             href: string;
         }[];
     }[];
+    settings: Setting;
 }
 
-export default function NavbarSheet({ menuItems = [] }: NavbarSheetProps) {
+export default function NavbarSheet({ menuItems = [], settings }: NavbarSheetProps) {
     const { value, setValue } = useBoolean();
 
     return (
@@ -27,7 +27,7 @@ export default function NavbarSheet({ menuItems = [] }: NavbarSheetProps) {
             <div className="grid md:hidden grid-cols-[auto_1fr_auto] items-center w-full gap-x-2 px-0 py-2">
                 <Link href="/" className="flex">
                     {/* <Image width={24} height={24} src="/logo.svg" alt="logo" className="text-white w-24" /> */}
-                    <Image src="/logo.svg" alt="logo" className="w-28" width={24} height={24} priority />
+                    <Image src="/logo.png" alt="logo" className="w-28" width={24} height={24} priority />
                     <span className="sr-only">logo</span>
                 </Link>
 
@@ -82,12 +82,12 @@ export default function NavbarSheet({ menuItems = [] }: NavbarSheetProps) {
                     ))}
                 </div>
 
-                {/* <Link href={whatsappLink(settings?.socials?.whatsapp ?? '')}> */}
                 <Button className="flex text-md font-helvetica text-heading-2 font-semibold cursor-pointer drop-shadow bg-custom-brown rounded-none py-6 mx-4 hover:bg-custom-brown/50">
-                    {/* <Icons name="whatsapp" className="h-6 w-6 text-heading-2" /> */}
-                    Book Your Session
+                    <Link href={settings?.link_whatsapp || ''} target="_blank">
+                        {/* <Icons name="whatsapp" className="h-6 w-6 text-heading-2" /> */}
+                        Book Your Session
+                    </Link>
                 </Button>
-                {/* </Link> */}
                 {/* <Button className="text-md font-outfit text-heading-2 font-semibold flex rounded-full cursor-pointer bg-gold-primary px-6 py-6 mx-4">
                     <Icons name="whatsapp" className="h-6 w-6 text-heading-2" />
                     Reservasi

@@ -1,3 +1,4 @@
+import { whatsappLink } from "../utils";
 import { fetcher } from "../utils/fetcher";
 
 type BaseResponseDetail<T> = {
@@ -60,23 +61,27 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
       }
     );
 
-    console.log("CEK: ", {
-      ...res,
-      data: {
-        ...res.data,
-        link_whatsapp: `https://wa.me/${
-          res.data?.socials?.whatsapp || ""
-        }?text=Hi%20ONYX%2C%20saya%20ingin%20konsultasi%20untuk%20perawatan%20gigi%20saya%20ya`,
-      },
-    });
+    // console.log("CEK: ", {
+    //   ...res,
+    //   data: {
+    //     ...res.data,
+    //     link_whatsapp: whatsappLink(
+    //       res.data?.socials?.whatsapp || "6281286632240",
+    //       res.data?.socials?.whatsappMessage ||
+    //         "Hi ONYX, saya ingin konsultasi untuk perawatan gigi saya ya"
+    //     ),
+    //   },
+    // });
 
     return {
       ...res,
       data: {
         ...res.data,
-        link_whatsapp: `https://wa.me/${
-          res.data?.socials?.whatsapp || ""
-        }?text=Hi%20ONYX%2C%20saya%20ingin%20konsultasi%20untuk%20perawatan%20gigi%20saya%20ya`,
+        link_whatsapp: whatsappLink(
+          res.data?.socials?.whatsapp || "6281286632240",
+          res.data?.socials?.whatsappMessage ||
+            "Hi ONYX, saya ingin konsultasi untuk perawatan gigi saya ya"
+        ),
       },
     };
   } catch (error) {

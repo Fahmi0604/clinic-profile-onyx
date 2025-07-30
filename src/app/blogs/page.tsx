@@ -43,8 +43,8 @@ export default async function BlogListPage() {
     const blogs = _blogs.data;
 
     return (
-        <PageWrapper className="min-h-screen bg-custom-primary">
-            <section className='flex justify-center px-4 py-8 md:py-20'>
+        <PageWrapper className=" bg-custom-primary">
+            <section className='min-h-screen flex justify-center px-4 py-8 md:py-20'>
                 <div className='w-full md:max-w-5xl xl:max-w-6xl'>
                     <div className='mb-24'>
                         <h3 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1 mb-6 md:mb-10">Dental Article</h3>
@@ -78,10 +78,10 @@ export default async function BlogListPage() {
 
             <Cta
                 title="Begin your smile transformation"
-                description={<>
-                    Your smile is your signature. Let us refine it with care, precision, and an eye <br className='hidden md:block' />
+                description={`
+                    Your smile is your signature. Let us refine it with care, precision, and an eye
                     for elegance.
-                </>}
+                `}
                 image="proven-result/proven-result-cta"
                 classNameTitle="text-2xl"
                 buttonLabel="Book Your Session Now"

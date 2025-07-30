@@ -41,23 +41,23 @@ export default async function Footer({ settings }: { settings: Setting }) {
                             <Link
                                 key={e.label}
                                 href={e.href}
-                                className="leading-[150%] pb-4 sm:pb-4 h-fit"
+                                className="leading-[150%] pb-4 sm:pb-4 w-fit h-fit"
                             >
                                 {e.label}
                             </Link>
                         ))}
                     </div>
                     <div className='flex flex-col text-white font-bold'>
-                        <Link href={`https://www.instagram.com/${settings?.socials?.instagram}`} className='pb-4 h-fit' target='_blank'>Instagram</Link>
-                        <Link href={`https://www.tiktok.com/${settings?.socials?.tiktok}`} className='pb-4 h-fit' target='_blank'>Tiktok</Link>
-                        <Link href={`https://www.youtube.com/${settings?.socials?.youtube}`} className='pb-4 h-fit' target='_blank'>Youtube</Link>
-                        <Link href={`https://www.facebook.com/${settings?.socials?.facebook}`} className='pb-4 h-fit' target='_blank'>Facebook</Link>
+                        <Link href={`https://www.instagram.com/${settings?.socials?.instagram}`} className='pb-4 w-fit h-fit' target='_blank'>Instagram</Link>
+                        <Link href={`https://www.tiktok.com/${settings?.socials?.tiktok}`} className='pb-4 w-fit h-fit' target='_blank'>Tiktok</Link>
+                        <Link href={`https://www.youtube.com/${settings?.socials?.youtube}`} className='pb-4 w-fit h-fit' target='_blank'>Youtube</Link>
+                        <Link href={`https://www.facebook.com/${settings?.socials?.facebook}`} className='pb-4 w-fit h-fit' target='_blank'>Facebook</Link>
                     </div>
                     <div className='grid gap-4 text-white'>
                         <Label className='text-lg font-bold'>Our Location:</Label>
                         <p>{settings.contactInfo?.address ?? `Ruko Asia Millenium, Jl. Taman Permata No.65 Blok C-1, Binong, Kec. Curug, Kabupaten Tangerang, Banten 15811`}</p>
 
-                        <Link className='flex items-center font-bold' href={settings?.mapUrl ?? 'https://maps.app.goo.gl/5AqjUPYF1gZtmtuh9'}>
+                        <Link className='flex items-center font-bold' href={settings?.mapUrl ?? 'https://maps.app.goo.gl/5AqjUPYF1gZtmtuh9'} target='_blank'>
                             <Icons name='place' className='w-6 h-6 text-white mr-2' /> See on Google Maps
                         </Link>
                     </div>

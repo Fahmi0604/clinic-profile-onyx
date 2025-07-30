@@ -101,11 +101,12 @@ export default async function Treatment() {
 
       <Cta
         title="Curated Dental Center, crafted just for you"
-        description={<>
-          Precision-driven and tailored to your pace, our aesthetic and restorative <br className="hidden md:block" />
+        description={`
+          Precision-driven and tailored to your pace, our aesthetic and restorative
           solutions fit seamlessly into your lifestyle.
-        </>}
+        `}
         image="treatment/treatment-cta"
+        classNameDescription="xl:max-w-[90%]"
         // classNameImage="mt-6"
         buttonLabel="Book Your Session Now"
       />

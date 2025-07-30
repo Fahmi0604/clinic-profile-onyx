@@ -62,7 +62,7 @@ export default async function Experience() {
               className="w-full md:h-[454px] object-cover"
             />
           </div>
-          <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col justify-between")}>
+          <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col gap-4 md:gap-0 justify-between")}>
             <Image
               src={`/assets/images/experience/experience-image-2.webp`}
               alt="experience-image-2"
@@ -136,7 +136,7 @@ export default async function Experience() {
               className="w-full md:h-[454px] object-cover"
             />
           </div>
-          <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col justify-between")}>
+          <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col gap-4 md:gap-0 justify-between")}>
             <Image
               src={`/assets/images/experience/experience-image-8.webp`}
               alt="experience-image-8"
@@ -188,10 +188,10 @@ export default async function Experience() {
 
       <Cta
         title="Designed to make you feel at ease"
-        description={<>
-          From our smile studio to our private treatment suites, every space is crafted to <br className="hidden md:block" />
+        description={`
+          From our smile studio to our private treatment suites, every space is crafted to
           calm, care, and bring out your most radiant self.
-        </>}
+        `}
         image="experience/experience-cta"
         classNameTitle="text-2xl"
         buttonLabel="Book Your Session Now"

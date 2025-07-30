@@ -15,38 +15,38 @@ const testimonials = [
         image: '/assets/images/home-section4-1.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'The Smile Studio',
+        description: 'A dedicated studio space to support your personalized smile design',
         image: '/assets/images/home-section4-2.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Reception Atelier',
+        description: 'A warm, elegant welcome with seamless concierge-style service',
         image: '/assets/images/home-section4-3.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Refreshments Bar',
+        description: 'Enjoy curated refreshments and a moment of calm before or after treatment',
         image: '/assets/images/home-section4-4.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Aesthetic Lounge',
+        description: 'A tranquil space designed for effortless comfort and refined taste',
         image: '/assets/images/home-section4-5.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Powder Room',
+        description: 'Immaculately maintained, serene, and styled for your complete comfort',
         image: '/assets/images/home-section4-6.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Kids Corner',
+        description: 'A cozy, playful space designed to keep little guests happy and at ease',
         image: '/assets/images/home-section4-7.webp',
     },
     {
-        title: 'The Onyx Treatment Room',
-        description: 'Equipped with high technology facilities and always prioritizing your comfort',
+        title: 'Advanced Technology',
+        description: 'From microscope to digital scanning, every step is guided by innovation for predictable results',
         image: '/assets/images/home-section4-8.webp',
     }
 ]

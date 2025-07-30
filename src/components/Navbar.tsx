@@ -6,7 +6,6 @@ import Link from "next/link"
 // import Icons from "./Icon"
 import NavbarSheet from "./NavbarSheet"
 // import PromoBar from "./PromoBar"
-import { whatsappLink } from "@/lib/utils"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { useBoolean } from "@/hooks"
 
@@ -52,7 +51,7 @@ export default function Navbar({ settings }: { settings: Setting }) {
                 <div className="container mx-auto flex h-16 md:h-20 md:max-w-5xl xl:max-w-6xl items-center justify-between px-4 xl:px-0">
                     <Link href="/" className="hidden md:flex md:items-center gap-2">
                         {/* <MountainIcon className="h-6 w-6 text-white" /> */}
-                        <Image src="/logo.svg" alt="logo" className="w-36" width={24} height={24} priority />
+                        <Image src="/logo.png" alt="logo" className="w-36" width={24} height={24} priority />
                         <span className="sr-only">logo</span>
                     </Link>
                     {/* <div className="hidden md:flex gap-8"> */}
@@ -98,7 +97,7 @@ export default function Navbar({ settings }: { settings: Setting }) {
                         ))}
                     </nav>
                     {/* <div className="flex items-center gap-4"> */}
-                    <Link href={whatsappLink(settings?.socials?.whatsapp ?? '')}>
+                    <Link href={settings?.link_whatsapp || ''} target="_blank">
                         <Button className="hidden md:flex text-md font-helvetica text-heading-2 font-semibold cursor-pointer drop-shadow bg-custom-brown rounded-none py-5 mx-4 hover:bg-custom-brown/50">
                             {/* <Icons name="whatsapp" className="h-6 w-6 text-heading-2" /> */}
                             Book Your Session
@@ -107,7 +106,7 @@ export default function Navbar({ settings }: { settings: Setting }) {
                     {/* </div> */}
                     {/* </div> */}
 
-                    <NavbarSheet menuItems={menuItems} />
+                    <NavbarSheet menuItems={menuItems} settings={settings} />
                 </div>
             </header>
         </>

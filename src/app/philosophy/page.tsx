@@ -111,13 +111,14 @@ export default async function Philosophy() {
 
       <Cta
         title="Carefully designed, expertly delivered"
-        description={<>
-          Where expertise meets attention and every <br className="md:hidden" /> detail of your smile is crafted with <br className="hidden md:block" />
-          care by <br className="md:hidden" /> the hands you can trust. Choose your <br className="md:hidden" /> expert and take the first step <br className="hidden md:block" />
+        description={`
+          Where expertise meets attention and every detail of your smile is crafted with
+          care by the hands you can trust. Choose your expert and take the first step
           today.
-        </>}
+        `}
         image="philosophy/philosophy-cta"
         classNameTitle="text-2xl"
+        classNameDescription="pr-[4%] md:pr-0"
         buttonLabel="Book Your Session Now"
       />
     </PageWrapper>

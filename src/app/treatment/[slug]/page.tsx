@@ -21,21 +21,27 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                             {treatment?.description && (
                                 <>
                                     <div className="flex gap-2 text-custom-text-color">
-                                        <Icons name={'verified'} />
+                                        <div className="w-6">
+                                            <Icons name={'verified'} className="w-6 h-6" />
+                                        </div>
                                         <div className="flex flex-col">
                                             <h5 className="font-bold">{treatment?.description[0].heading}</h5>
                                             <p>{treatment?.description[0].list}</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-2 text-custom-text-color">
-                                        <Icons name={'star-badge'} />
+                                        <div className="w-6">
+                                            <Icons name={'star-badge'} className="w-6 h-6" />
+                                        </div>
                                         <div className="flex flex-col">
                                             <h5 className="font-bold">{treatment?.description[1].heading}</h5>
                                             <p>{treatment?.description[1].list}</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-2 text-custom-text-color">
-                                        <Icons name={'clock4'} />
+                                        <div className="w-6">
+                                            <Icons name={'clock4'} className="w-6 h-6" />
+                                        </div>
                                         <div className="flex flex-col">
                                             <h5 className="font-bold">{treatment?.description[2].heading}</h5>
                                             <p>{treatment?.description[2].list}</p>
@@ -59,7 +65,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
             </div>
         </section>
 
-        {treatment?.result?.length && <section className="hidden w-full md:flex justify-center">
+        {treatment?.result?.length ? <section className="p-7 md:p-0 w-full flex justify-center">
             <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
                 <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Results</h1>
                 <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
@@ -77,11 +83,11 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                     ))}
                 </div>
             </div>
-        </section>}
+        </section> : null}
 
         <Cta
             title={treatment?.cta.title}
-            description={<>{treatment?.cta.subheading}</>}
+            description={`${treatment?.cta.subheading}`}
             image={`/assets/images/treatment/cta-${slug}.webp`}
             // classNameImage="mt-6"
             buttonLabel={treatment?.cta.buttonLabel}

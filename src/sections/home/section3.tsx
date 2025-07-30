@@ -53,7 +53,7 @@ export default async function Section3() {
                 </div>
                 <div className="w-full flex justify-center">
                     <Link href={"/proven-result"}>
-                        <Button className="w-full md:w-fit flex gap-2 !px-36 py-6 cursor-pointer bg-transparent rounded-none border border-black items-center justify-center hover:bg-transparent">
+                        <Button className="w-full md:w-fit flex gap-2 !px-12 md:!px-36 py-6 cursor-pointer bg-transparent rounded-none border border-black items-center justify-center hover:bg-transparent">
                             <span className="text-black font-semibold">See all Transformations</span>
                             <Icons name="arrow-long-right" className="w-6 h-6 text-black" />
                         </Button>
