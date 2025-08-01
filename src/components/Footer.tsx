@@ -28,6 +28,9 @@ export default async function Footer({ settings }: { settings: Setting }) {
         }
     ]
 
+    console.log("FOOTER ", settings);
+
+
     return (
         <footer className="w-full bg-footer p-7 md:px-[10%] md:py-10">
             <div className='flex flex-col md:flex-row md:mb-14'>
@@ -48,10 +51,10 @@ export default async function Footer({ settings }: { settings: Setting }) {
                         ))}
                     </div>
                     <div className='flex flex-col text-white font-bold'>
-                        <Link href={`https://www.instagram.com/${settings?.socials?.instagram}`} className='pb-4 w-fit h-fit' target='_blank'>Instagram</Link>
-                        <Link href={`https://www.tiktok.com/${settings?.socials?.tiktok}`} className='pb-4 w-fit h-fit' target='_blank'>Tiktok</Link>
-                        <Link href={`https://www.youtube.com/${settings?.socials?.youtube}`} className='pb-4 w-fit h-fit' target='_blank'>Youtube</Link>
-                        <Link href={`https://www.facebook.com/${settings?.socials?.facebook}`} className='pb-4 w-fit h-fit' target='_blank'>Facebook</Link>
+                        <Link href={`https://www.instagram.com/${settings?.socials?.instagram ?? "onyxdentalcenter"}`} className='pb-4 w-fit h-fit' target='_blank'>Instagram</Link>
+                        <Link href={`https://www.tiktok.com/${settings?.socials?.tiktok ?? "@onyxdentalcenter"}`} className='pb-4 w-fit h-fit' target='_blank'>Tiktok</Link>
+                        <Link href={`https://www.youtube.com/${settings?.socials?.youtube ?? "@onyxdentalcenter"}`} className='pb-4 w-fit h-fit' target='_blank'>Youtube</Link>
+                        <Link href={`https://www.facebook.com/${settings?.socials?.facebook ?? "onyxdentalcenter"}`} className='pb-4 w-fit h-fit' target='_blank'>Facebook</Link>
                     </div>
                     <div className='grid gap-4 text-white'>
                         <Label className='text-lg font-bold'>Our Location:</Label>
