@@ -7,8 +7,8 @@ import { metaData } from "@/lib/utils/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Proven Result',
-    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    title: 'Proven Results - Onyx Dental Center',
+    description: 'See our proven aesthetic dentistry results. Veneers, smile makeovers & transformative treatments that create stunning smiles.',
     images: [{ url: '/assets/images/proven-result/proven-result-banner.webp' }],
     path: '/proven-result',
   });

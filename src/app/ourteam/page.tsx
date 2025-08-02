@@ -10,8 +10,8 @@ import Icons from "@/components/Icon";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Our Team',
-    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    title: 'Our Team - Onyx Dental Center',
+    description: 'Profesional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
     images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
     path: '/ourteam',
   });

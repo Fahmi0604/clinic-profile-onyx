@@ -28,9 +28,9 @@ export const revalidate = 60; // ISR: update list every 60s
 
 export async function generateMetadata(): Promise<Metadata> {
     return metaData({
-        title: 'Blogs',
-        description: "Jakarta's premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.",
-        images: [{ url: '' }],
+        title: 'Blog - Onyx Dental Center',
+        description: "Written by our dental experts, our blog has the latest insights and tips on dental care, treatments, and innovations in dentistry. Booking now.",
+        images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs',
     });
 };
