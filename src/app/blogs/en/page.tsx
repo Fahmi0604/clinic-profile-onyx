@@ -14,29 +14,17 @@ import Cta from '@/components/Cta';
 
 export const revalidate = 60; // ISR: update list every 60s
 
-// async function getBlogs() {
-//     return [
-//         {
-//             title: 'Blog 1',
-//             slug: 'blog-1',
-//             excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//             featuredImage: '/assets/images/banner-dokter.webp',
-//         },
-//     ]
-//     return findPublishedBlogs();
-// }
-
 export async function generateMetadata(): Promise<Metadata> {
     return metaData({
         title: 'Blog - Onyx Dental Center',
         description: "Written by our dental experts, our blog has the latest insights and tips on dental care, treatments, and innovations in dentistry. Booking now.",
         images: [{ url: '/assets/images/home-section4-3.webp' }],
-        path: '/blogs',
+        path: '/blogs/en',
     });
 };
 
 export default async function BlogListPage() {
-    const _blogs = await getBlogs();
+    const _blogs = await getBlogs("en-id");
 
     if (!_blogs) return notFound();
 

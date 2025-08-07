@@ -57,7 +57,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     return (
         <>
             <Head>
-                <link rel="alternate" hrefLang="en" href={`https://onyxdentalcenter.id/blogs/${slug}`} />
+                <link rel="alternate" hrefLang={language} href={`https://onyxdentalcenter.id/blogs/${slug}`} />
             </Head>
             <JsonLd schemaType='BlogPosting' data={blog.data} />
             <PageWrapper className='bg-custom-primary'>
@@ -74,9 +74,10 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                         <Image
                             src={blog.data.thumbnailUrl ?? ''}
                             alt={blog.data.title ?? ''}
-                            width={100}
-                            height={100}
-                            className='mt-8 rounded-lg w-full md:h-[70vh] object-cover'
+                            width={800}
+                            height={600}
+                            className='mt-8 rounded-lg w-full h-auto max-h-[70vh] object-contain'
+                            priority
                         />
 
                         <TableOfContents htmlContent={blog.data.content} language={language} />
