@@ -14,6 +14,8 @@ import { PageWrapper } from '@/components';
 import { getBlogsBySlug } from '@/lib/api';
 import Cta from '@/components/Cta';
 import Head from 'next/head';
+import TableOfContents from '@/components/TableOfContents';
+import BlogContent from '@/components/BlogContent';
 
 export const revalidate = 60; // ISR regeneration time (60 seconds)
 export const dynamicParams = true; // Allow dynamic params
@@ -46,9 +48,9 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     // Ensure params is properly destructured and not treated as a Promise
     const { slug } = await params;
     const blog = await getBlogsBySlug(slug);
-    // const blog = blogs.map((m) => ({ ...m, content })).find((e) => e.slug === slug);
-
-    console.log('BLOG: ', blog);
+    // console.log('BLOG: ', blog);
+    const language = blog.data.language ?? 'id-id';
+    const author = blog.data.author.name ?? 'Onyx Editorial Team';
 
     if (!blog) return notFound();
 
@@ -67,6 +69,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
 
                         <h1 className='mb-1 leading-[150%] text-5xl font-eb-garamond text-custom-text-color font-semibold'>{blog.data.title}</h1>
                         <span className='text-custom-text-color'>{format(blog.data.published_at ?? '', 'dd MMMM yyyy', { locale: id })}</span>
+                        <span > | {language == 'id-id' ? 'Ditulis oleh ' : 'Written by '}{author}</span>
 
                         <Image
                             src={blog.data.thumbnailUrl ?? ''}
@@ -75,15 +78,17 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                             height={100}
                             className='mt-8 rounded-lg w-full md:h-[70vh] object-cover'
                         />
-                        {/* <p className='text-stone-400'>by {blog.author.name}</p> */}
-                        <article className='mt-6 font-helvetica! md:max-w-3xl! xl:max-w-4xl! text-custom-text-color! prose lg:prose-lg' dangerouslySetInnerHTML={{ __html: blog.data.content }} />
+
+                        <TableOfContents htmlContent={blog.data.content} language={language} />
+
+                        <BlogContent content={blog.data.content} />
                     </div>
                 </section>
                 {Boolean(blog.data?.cta) && <Cta
                     title={blog.data.cta.title ?? ''}
                     description={blog.data.cta.description ?? ''}
                     image={blog.data.cta.imgBanner ?? ''}
-                    buttonLabel={blog.data.cta.textButton ?? ''}
+                    buttonLabel={blog.data.cta.textButton ?? (language === 'id-id' ? 'Booking Sekarang' : 'Booking Now!')}
                     url={blog.data.cta.url ?? ''}
                     isDynamic={true}
                 // classNameImage="object-[50%_80%] md:object-[50%_40%]"
