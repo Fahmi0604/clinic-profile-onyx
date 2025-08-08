@@ -51,6 +51,8 @@ export async function GET() {
         "philosophy",
         "proven-result",
         "blogs",
+        "blogs/en",
+        "blogs/id",
         ...doctorUrls,
         ...treatmentUrls,
       ];
