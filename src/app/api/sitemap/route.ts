@@ -10,61 +10,73 @@ export async function GET() {
   const now = Date.now();
   const lastMod = new Date().toISOString();
 
-  // Refresh cache every hour
-  if (!cachedSitemap || now - lastFetched > 1000 * 60 * 60) {
+  // 10 seconds cache in dev, 1 hour in production
+  const cacheTime = process.env.NODE_ENV === 'development' ? 10000 : 1000 * 60 * 60;
+  if (!cachedSitemap || now - lastFetched > cacheTime) {
     try {
       const responseBlog = await getBlogsForSitemap();
       const blogs = responseBlog.data;
+      const baseUrl = "https://onyxdentalcenter.id/";
 
-      const staticUrls = [
-        {
-          loc: "https://onyxdentalcenter.id",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        {
-          loc: "https://onyxdentalcenter.id/ourteam",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        {
-          loc: "https://onyxdentalcenter.id/treatment",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        {
-          loc: "https://onyxdentalcenter.id/experience",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        {
-          loc: "https://onyxdentalcenter.id/philosophy",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        {
-          loc: "https://onyxdentalcenter.id/proven-result",
-          changefreq: "daily",
-          priority: 0.7,
-          lastmod: lastMod,
-        },
-        // add other static pages here
+      const doctorUrls: Array<string> = [
+        "ourteam/drg-trisia-bella-kusuma",
+        "ourteam/drg-eka-yesaya",
+        "ourteam/drg-fikri-al-hafiz",
+        "ourteam/drg-ovelia-veres",
+        "ourteam/drg-melisa-sp-pros",
+        "ourteam/drg-arinanda-ramadhan",
+        "ourteam/drg-yeheskiel-mursalim",
+        "ourteam/drg-rio-jonas-m-kes-sert-ort",
+        "ourteam/drg-eddy-phd",
+        "ourteam/drg-florencia-stephanie",
+        "ourteam/drg-jazila-afifa",
       ];
+
+      const treatmentUrls: Array<string> = [
+        "treatment/veneers",
+        "treatment/dental-crown",
+        "treatment/dental-spa",
+        "treatment/orthodontic-and-clear-aligner",
+        "treatment/dental-implant",
+        "treatment/aesthetic-direct-restoration",
+        "treatment/kids-treatment",
+        "treatment/smile-makeover",
+        "treatment/bleaching",
+      ];
+
+      const allUrls: Array<string> = [
+        "ourteam",
+        "treatment",
+        "experience",
+        "philosophy",
+        "proven-result",
+        "blogs",
+        ...doctorUrls,
+        ...treatmentUrls,
+      ];
+
+      const staticUrls: Array<Record<string, string | number>> = allUrls.map((url) => ({
+        loc: `${baseUrl}${url}`,
+        changefreq: "weekly",
+        priority: 0.7,
+        lastmod: lastMod,
+      }));
 
       const blogUrls =
         blogs?.map((blog: Post) => ({
-          loc: `https://onyxdentalcenter.id/blogs/${blog.slug}`,
-          lastmod: lastMod,
+          loc: `${baseUrl}/blogs/${blog.slug}`,
           changefreq: "weekly",
           priority: 0.8,
+          lastmod: lastMod,
         })) || [];
 
       const urls: Record<string, string | number>[] = [
+        {
+          loc: baseUrl,
+          changefreq: "weekly",
+          priority: 0.7,
+          lastmod: lastMod,
+        },
         ...staticUrls,
         ...blogUrls,
       ];
@@ -76,7 +88,7 @@ export async function GET() {
             (url) => `
           <url>
             <loc>${url.loc}</loc>
-            ${url?.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ""}
+            ${url?.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : `<lastmod>${lastMod}</lastmod>`}
             <changefreq>${url.changefreq}</changefreq>
             <priority>${url.priority}</priority>
           </url>`
@@ -93,12 +105,12 @@ export async function GET() {
     }
   }
 
-  console.log({
-    lastFetched,
-    now,
-    timeSinceLastFetch: now - lastFetched,
-    cachedSitemap,
-  });
+  // console.log({
+  //   lastFetched,
+  //   now,
+  //   timeSinceLastFetch: now - lastFetched,
+  //   cachedSitemap,
+  // });
 
   return new NextResponse(cachedSitemap, {
     headers: {
