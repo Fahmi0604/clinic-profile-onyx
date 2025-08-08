@@ -10,8 +10,8 @@ import { treatments } from "@/lib/data/treatment";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Treatment',
-    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    title: 'Treatments - Onyx Dental Center',
+    description: 'Specialized in aesthetic dentistry, we service smile makeovers, veneers, orthodontics, dental crowns, bleaching, dental spa, etc.',
     images: [{ url: '/assets/images/treatment/treatment-banner.webp' }],
     path: '/treatment',
   });

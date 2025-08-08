@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Experience',
-    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
+    title: 'Experience - Onyx Dental Center',
+    description: 'Aesthetic dentistry redefined. Experience personalized care in a modern, comfortable clinic designed to elevate your smile journey.',
     images: [{ url: '/assets/images/experience/experience-banner.webp' }],
     path: '/experience',
   });

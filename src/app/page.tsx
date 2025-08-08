@@ -17,16 +17,11 @@ import Section5 from "@/sections/home/section5";
 import Section6 from "@/sections/home/section6";
 import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Home",
-//   description: "BMW Dental Clinic adalah klinik gigi terpercaya, terjangkau dan modern di Medan dengan dokter gigi terbaik",
-// };
-
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Home',
-    description: "Jakarta's premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.",
-    images: [{ url: '' }],
+    title: 'Onyx Dental Center',
+    description: "Discover Jakarta's premier Smile Studio. Onyx Dental's dentist specializes in veneers, Invisalign, and smile makeovers. Book your consultation.",
+    images: [{ url: '/assets/images/home-section1.webp' }],
     path: '/',
   });
 }

@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: '360 Smile Philosophy',
-    description: 'Jakarta’s premier Smile Studio. Our team of elite cosmetic dentists collaborates to design your unique, life-enhancing smile. Book your consultation today.',
-    images: [{ url: '' }],
+    title: '360 Smile Philosophy - Onyx Dental Center',
+    description: 'Personalized smile consultations co-diagnosed by our founders using latest digital technology. Carefully designed, expertly delivered',
+    images: [{ url: '/assets/images/philosophy/philosophi-image-5.webp' }],
     path: '/philosophy',
   });
 }
