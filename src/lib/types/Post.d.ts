@@ -4,6 +4,11 @@ declare type Post = {
   title: string;
   excerpt: string;
   content: string;
+  language: string;
+  author: {
+    name: string,
+    email: string,
+  }
   status: string;
   thumbnailUrl: string;
   //   {
