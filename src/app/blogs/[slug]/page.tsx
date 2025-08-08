@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: blog.data.excerpt,
         images: blog.data.thumbnailUrl ? [{ url: blog.data.thumbnailUrl }] : [],
         path: `/blogs/${blog.data.slug}`,
+        language: blog.data.language,
     });
 }
 
@@ -90,7 +91,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                     description={blog.data.cta.description ?? ''}
                     image={blog.data.cta.imgBanner ?? ''}
                     buttonLabel={blog.data.cta.textButton ?? (language === 'id-id' ? 'Booking Sekarang' : 'Booking Now!')}
-                    url={blog.data.cta.url ?? ''}
+                    url={blog.data.cta.url || '/assets/images/proven-result/proven-result-cta-desktop.webp'}
                     isDynamic={true}
                 // classNameImage="object-[50%_80%] md:object-[50%_40%]"
                 />}

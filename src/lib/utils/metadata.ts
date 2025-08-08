@@ -4,6 +4,7 @@ interface GenerateMetadataParams {
   description: string;
   images?: { url: string }[];
   path?: string;
+  language?: string;
 }
 
 export function metaData({
@@ -11,6 +12,7 @@ export function metaData({
   description,
   images = [],
   path = "",
+  language = "id-id",
 }: GenerateMetadataParams): Metadata {
   const baseUrl = "https://onyxdentalcenter.id";
   const url = path ? `${baseUrl}${path}` : baseUrl;
@@ -33,7 +35,11 @@ export function metaData({
       })),
       siteName: "BMW Dental Clinic – Klinik Gigi Terbaik di Medan",
     },
-
+    alternates: {
+      languages: {
+        [language]: url,
+      },
+    },
     // twitter: {
     //   card: "summary_large_image",
     //   title,
