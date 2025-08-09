@@ -35,7 +35,23 @@ export default async function BlogListPage() {
             <section className='min-h-screen flex justify-center px-4 py-8 md:py-20'>
                 <div className='w-full md:max-w-5xl xl:max-w-6xl'>
                     <div className='mb-24'>
-                        <h3 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1 mb-6 md:mb-10">Dental Article</h3>
+                        <div className='flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10'>
+                            <h3 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1">Dental Article</h3>
+                            
+                            {/* Language Switcher */}
+                            <div className='flex gap-2 mt-4 md:mt-0'>
+                                <Link 
+                                    href="/blogs/id" 
+                                    className='px-4 py-2 rounded-lg font-medium transition-colors bg-white text-custom-text-color border border-gray-300 hover:bg-gray-50'
+                                >
+                                    Bahasa Indonesia
+                                </Link>
+                                <div className='px-4 py-2 rounded-lg font-medium bg-custom-secondary text-white'>
+                                    English
+                                </div>
+                            </div>
+                        </div>
+
                         <div className='w-full flex flex-col md:flex-row flex-wrap items-stretch gap-5 md:gap-7 xl:gap-10'>
                             {blogs.map((e) => (
                                 <Link key={e.id} href={`/blogs/${e.slug}`} className='w-full md:w-[31%] flex flex-col gap-4 bg-white drop-shadow-md'>

@@ -15,17 +15,24 @@ type BaseResponse<T> = {
 export const API_BASE_URL = "https://api.onyxdentalcenter.id/api/";
 const BASE_URL = "https://api.onyxdentalcenter.id/api/" + "public";
 const DEFAULT_REVALIDATE = 43200; // 12 hours
-const DEFAULT_REVALIDATE_BLOGS = 14400; // 4 hours
+const DEFAULT_REVALIDATE_BLOGS = 3600; // 1 hours
 
-export async function getBlogs(language: string = "id-id"): Promise<BaseResponse<Post>> {
-  const url = `${BASE_URL}/posts?language=${language}`
+export async function getBlogs(language: string | null = null): Promise<BaseResponse<Post>> {
+  const url = language ? `${BASE_URL}/posts?language=${language}` : `${BASE_URL}/posts`;
 
   const res = await fetcher<BaseResponse<Post>>(url, {
-    next: { revalidate: DEFAULT_REVALIDATE_BLOGS }
+    next: { 
+      revalidate: DEFAULT_REVALIDATE_BLOGS,
+      tags: [`blogs-${language || 'all'}`] // Unique cache tag per language
+    }
   });
 
   return res;
 }
+
+// Remove getBlogsId and getBlogsEn, replace with:
+export const getBlogsId = () => getBlogs('id-id');
+export const getBlogsEn = () => getBlogs('en-id');
 
 export async function getBlogsForSitemap(): Promise<BaseResponse<Post>> {
   try {
