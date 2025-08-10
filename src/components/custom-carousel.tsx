@@ -92,7 +92,7 @@ export default function CustomCarousel() {
                                     alt={item.title}
                                     width={1000}
                                     height={1000}
-                                    className='z-10 w-full h-[50vh] md:h-auto object-cover md:object-none'
+                                    className='z-10 w-full h-[50vh] md:h-[825px] object-cover md:object-none'
                                 />
                                 {/* overlay */}
                                 <div className='hidden md:block absolute w-full h-[75vh] bottom-0 z-20 bg-gradient-to-b from-[rgba(14,14,14,0)] to-[#000000]' />
