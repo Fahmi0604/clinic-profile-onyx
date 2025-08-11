@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!doctor) {
         return metaData({
             title: 'Our Team - Onyx Dental Center',
-            description: 'Profesional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
+            description: 'Professional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
             images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
             path: '/ourteam',
         })
