@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: 'Professional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
             images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
             path: '/ourteam',
-        })
+        });
     }
 
     const index = doctors.findIndex((d) => d.slug === slug);
