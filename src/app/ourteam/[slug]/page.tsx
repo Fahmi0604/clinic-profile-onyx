@@ -4,8 +4,39 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { getSettings } from "@/lib/api";
 import { doctors } from "@/lib/data/doctor";
+import { metaData } from "@/lib/utils/metadata";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export function generateStaticParams() {
+  return doctors.map((doctor) => ({
+    slug: doctor.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const doctor = doctors.find((doc) => doc.slug === slug);
+
+    if (!doctor) {
+        return metaData({
+            title: 'Our Team - Onyx Dental Center',
+            description: 'Professional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
+            images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
+            path: '/ourteam',
+        });
+    }
+
+    const index = doctors.findIndex((d) => d.slug === slug);
+  
+    return metaData({
+        title: `${doctor.name} | Onyx Dental Center`,
+        description: `Dentist near Jakarta, Bogor, Depok, Tangerang, and Bekasi. With speciality ${doctor.speciality}`,
+        images: [{ url: `/assets/images/doctor/doctor-detail-${index + 1}.webp` }],
+        path: `/ourteam/${slug}`,
+    });
+}
 
 export default async function DetailDoctor({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;

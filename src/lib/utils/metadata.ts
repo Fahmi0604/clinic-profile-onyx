@@ -12,7 +12,7 @@ export function metaData({
   description,
   images = [],
   path = "",
-  language = "id-id",
+  language = "en-id",
 }: GenerateMetadataParams): Metadata {
   const baseUrl = "https://onyxdentalcenter.id";
   const url = path ? `${baseUrl}${path}` : baseUrl;

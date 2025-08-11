@@ -2,7 +2,38 @@ import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
 import Icons from "@/components/Icon";
 import { treatments } from "@/lib/data/treatment";
+import { metaData } from "@/lib/utils/metadata";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export function generateStaticParams() {
+  return treatments.map((treatment) => ({
+    slug: treatment.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const treatment = treatments.find((treatment) => treatment.slug === slug);
+
+    if (!treatment) {
+        return metaData({
+            title: 'Treatments - Onyx Dental Center',
+            description: 'Specialized in aesthetic dentistry, we service smile makeovers, veneers, orthodontics, dental crowns, bleaching, dental spa, etc.',
+            images: [{ url: '/assets/images/treatment/treatment-banner.webp' }],
+            path: '/treatment',
+        });
+    }
+
+    const index = treatments.findIndex((treatment) => treatment.slug === slug);
+  
+    return metaData({
+        title: `${treatment.title} Treatment | Onyx Dental Center`,
+        description: `Premium Aesthetic Dental Treatment ${treatment.title} near Jakarta, Bogor, Depok, Tangerang, and Bekasi.`,
+        images: [{ url: `/assets/images/treatment/treatment-image-${index + 1}.webp` }],
+        path: `/treatment/${slug}`,
+    });
+}
 
 export default async function DetailDoctor({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
