@@ -89,9 +89,9 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                 {Boolean(blog.data?.cta) && <Cta
                     title={blog.data.cta.title ?? ''}
                     description={blog.data.cta.description ?? ''}
-                    image={blog.data.cta.imgBanner ?? ''}
+                    image={blog.data.cta.imgBanner || '/assets/images/proven-result/proven-result-cta-desktop.webp'}
                     buttonLabel={blog.data.cta.textButton ?? (language === 'id-id' ? 'Booking Sekarang' : 'Booking Now!')}
-                    url={blog.data.cta.url || '/assets/images/proven-result/proven-result-cta-desktop.webp'}
+                    url={blog.data.cta.url}
                     isDynamic={true}
                 // classNameImage="object-[50%_80%] md:object-[50%_40%]"
                 />}
